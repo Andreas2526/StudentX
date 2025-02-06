@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrollside</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="animated-background"></div>
+    <div class="control-card">
+        <h1>KONTROLLSYSTEM</h1>
+        <div class="profile">
+            <div class="image-container">
+                <img id="student-img" src="student-placeholder.jpg" alt="Studentbilde">
+            </div>
+        </div>
+        <div class="control-info">
+            <p><strong>Navn:</strong> Christian Forbregd Hansen</p>
+            <p><strong>Student-ID:</strong> 461894</p>
+            <p><strong>Kontrollkode:</strong> <span id="control-code"></span></p>
+            <p><strong>Sist oppdatert:</strong> <span id="last-updated">Laster...</span></p>
+        </div>
+        <div class="qr-container">
+            <img id="qr-code" alt="QR-kode" src="">
+        </div>
+        <div id="validity-animation" class="valid-box">
+            <div class="valid-box-inner">
+                <strong>Gyldig til:</strong> <span>30.06.2025</span>
+            </div>
+        </div>
+        <button class="btn" onclick="generateNewCode()">Oppdater Kontrollkode</button>
+        <button class="btn btn-secondary" onclick="window.location.href='index.html'">Tilbake</button>
+    </div>
+</body>
+</html>
