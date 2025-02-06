@@ -1,0 +1,218 @@
+/* === Generell styling === */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a1f44, #163b6b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* === ANIMERT BAKGRUNN PÅ KONTROLLSIDEN === */
+.animated-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 168, 204, 0.3) 20%, rgba(10, 31, 68, 0.9) 90%);
+    animation: movingBackground 8s infinite linear alternate;
+    z-index: -1;
+}
+
+@keyframes movingBackground {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-30px) translateY(10px); }
+    100% { transform: translateX(30px) translateY(-10px); }
+}
+
+/* === STUDENTBEVIS (FOR-SIDE) === */
+.student-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 420px;
+    width: 100%;
+    border: 2px solid #0071c5;
+    position: relative;
+    animation: fadeIn 1s forwards;
+}
+
+.header {
+    background: #0071c5;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* === PROFILBILDE STYLING (FORSIDE & KONTROLLSIDE) === */
+.image-container {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid #0071c5;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === VALID-BOKS (FOR-SIDE & KONTROLLSIDE) === */
+.valid-box {
+    background: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* === YTRE TRANSPARENT RAMME === */
+#validity-animation {
+    position: relative;
+    width: 250px;
+    height: 65px;
+    border-radius: 12px;
+    border: 2px solid rgba(76, 175, 80, 0.8);
+    background: rgba(76, 175, 80, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(76, 175, 80, 0.4);
+    backdrop-filter: blur(8px);
+    animation: glowingBorder 4s infinite alternate ease-in-out;
+}
+
+/* === INDRE BOKS SOM BEVEGER SEG SIRKULÆRT === */
+.valid-box-inner {
+    width: 85%;
+    height: 75%;
+    background: linear-gradient(90deg, #4CAF50, #3E8E41);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.7);
+    position: absolute;
+    animation: circularMotion 4s infinite linear;
+}
+
+/* === ANIMERT LYSEFFEKT INNE I BOKSEN === */
+.valid-box-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(0, 0, 0, 0) 80%);
+    border-radius: 8px;
+    animation: glowPulse 4s infinite alternate ease-in-out;
+}
+
+/* === ANIMASJONER === */
+
+/* Sirkulær bevegelse av den grønne boksen */
+@keyframes circularMotion {
+    0% { transform: translateX(-10px) translateY(-5px) scale(0.98); }
+    25% { transform: translateX(5px) translateY(-10px) scale(1.02); }
+    50% { transform: translateX(10px) translateY(5px) scale(1.05); }
+    75% { transform: translateX(-5px) translateY(10px) scale(1.02); }
+    100% { transform: translateX(-10px) translateY(-5px) scale(0.98); }
+}
+
+/* Glødende kantlinjer rundt rammen */
+@keyframes glowingBorder {
+    0% { box-shadow: 0px 0px 10px rgba(76, 175, 80, 0.3); }
+    100% { box-shadow: 0px 0px 25px rgba(76, 175, 80, 0.7); }
+}
+
+/* Pulserende lysglød inni boksen */
+@keyframes glowPulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.6; transform: scale(1.1); }
+}
+
+
+
+/* === GLØD OG BEVEGELSE PÅ BOKSEN === */
+@keyframes glowingBox {
+    0% { box-shadow: 0px 0px 10px rgba(76, 175, 80, 0.8); }
+    100% { box-shadow: 0px 0px 20px rgba(76, 175, 80, 1); }
+}
+
+/* === FLYTENDE TEKST ANIMASJON === */
+@keyframes floatingText {
+    0% { transform: translateY(-3px); opacity: 0.9; }
+    100% { transform: translateY(3px); opacity: 1; }
+}
+
+/* === KONTROLLKORT (KONTROLLSIDE) === */
+.control-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+    border: 2px solid #0071c5;
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* === QR-KODE STYLING === */
+.qr-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qr-code {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* === KNAPPESTIL === */
+.btn {
+    background: #0071c5;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #005ba1;
+    transform: scale(1.05);
+}
+
+/* === FADE-IN ANIMASJON === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
